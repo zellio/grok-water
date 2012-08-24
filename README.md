@@ -1,3 +1,10 @@
+GROK Water
+==========
+
+A rigid body kinetics simulation.
+
+<!--
+
 The file "model.c" writes the binary file "model.dat" which contains the accelerations and torques. This may take a while. 
 
 "test.c" runs a simulation using "model.dat"
@@ -12,3 +19,4 @@ The file "model.c" writes the binary file "model.dat" which contains the acceler
 
 "Makefile" makes the above via the commands make model, make test, make rigid, or just make to make all. 
 
+-->

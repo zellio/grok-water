@@ -1,3 +1,4 @@
+
 #ifndef __GROKWATER_MATH_VECTOR__
 #define __GROKWATER_MATH_VECTOR__
 
@@ -11,7 +12,7 @@ extern "C" {
 
 
   //types and structs
-  
+
   // forward define the matrix type so that source will compile properly
   typedef struct matrix matrix_t;
 
@@ -23,13 +24,16 @@ extern "C" {
   };
 
 
-  //prototypes 
+  //prototypes
 
   vector_t vector_add( vector_t A, vector_t B );
   vector_t vector_subtract( vector_t A, vector_t B );
   vector_t vector_multiply( vector_t A, double s );
   vector_t vector_cross( vector_t A, vector_t B );
-  vector_t vector_rotate( matrix_t A, vector_t B );
+  vector_t vector_rotate( matrix_t T, vector_t V );
+
+  double vector_length_squared( vector_t A );
+  matrix_t tilde( vector W );
 
 
 #ifdef __cplusplus
@@ -37,4 +41,3 @@ extern "C" {
 #endif
 
 #endif
-

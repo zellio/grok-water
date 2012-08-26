@@ -26,14 +26,14 @@ extern "C" {
 
   //prototypes
 
-  vector_t vector_add( vector_t A, vector_t B );
-  vector_t vector_subtract( vector_t A, vector_t B );
-  vector_t vector_multiply( vector_t A, double s );
-  vector_t vector_cross( vector_t A, vector_t B );
-  vector_t vector_rotate( matrix_t T, vector_t V );
+  vector_t vector_add( vector_t * A, vector_t * B );
+  vector_t vector_subtract( vector_t * A, vector_t * B );
+  vector_t vector_multiply( vector_t * A, double s );
+  vector_t vector_cross( vector_t * A, vector_t * B );
+  vector_t vector_rotate( matrix_t * T, vector_t * V );
 
-  double vector_length_squared( vector_t A );
-  matrix_t tilde( vector W );
+  double vector_length_squared( vector_t * A );
+  matrix_t tilde( vector_t * W );
 
 
 #ifdef __cplusplus

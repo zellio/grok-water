@@ -7,7 +7,9 @@ extern "C" {
 #endif
 
 
-  //prototypes 
+  //prototypes
+
+  double fast_abs( double n );
 
   double fast_sqrt( double n );
   double fast_acos( double n );
@@ -20,4 +22,3 @@ extern "C" {
 #endif
 
 #endif
-

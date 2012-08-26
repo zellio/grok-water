@@ -7,7 +7,7 @@ extern "C" {
 #endif
 
   //types and structs
-  
+
   // forward define the vector type so that source will compile properly
   typedef struct vector vector_t;
 
@@ -17,18 +17,18 @@ extern "C" {
   };
 
 
-  //prototypes 
+  //prototypes
+  matrix_t matrix_add( matrix_t * A, matrix_t * B );
 
-  matrix_t matrix_add( matrix_t A, matrix_t B );
+  matrix_t matrix_multiply_ms( matrix_t * A, double s );
+  matrix_t matrix_multiply( matrix_t * A, matrix_t * B );
+  matrix_t matrix_similarity_transform( matrix_t * A, matrix_t * B );
+  matrix_t matrix_reorthogonalize( matrix_t * A );
+  matrix_t matrix_transpose( matrix_t * A );
+  matrix_t matrix_inverse( matrix_t * T );
 
-  matrix_t matrix_multiply_ms( matrix_t A, double s );
-  matrix_t matrix_multiply( matrix_t A, matrix_t B );
-  matrix_t matrix_similarity_transform(matrix_t a, matrix_t b);
-  matrix_t matrix_reorthogonalize(matrix_t A);
-  matrix_t matrix_transpose(matrix_t a);
-  matrix_t matrix_inverse(matrix_t t);
-
-  double matrix_determinant(matrix_t t);
+  double matrix_determinant( matrix_t * T );
+  double matrix_determinant_inverse( matrix_t * T );
 
 
 #ifdef __cplusplus
@@ -36,4 +36,3 @@ extern "C" {
 #endif
 
 #endif
-

@@ -1,6 +1,6 @@
 
 
-#include "fast.h"
+#include "math/fast.h"
 
 #include <stdint.h>
 #include <math.h>

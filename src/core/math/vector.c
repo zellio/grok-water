@@ -42,11 +42,10 @@ double vector_length_squared( const vector_t * A ) {
     return A->x * A->x + A->y * A->y + A->z * A->z;
 }
 
-
 matrix_t tilde( const vector_t * W ) {
-	matrix C;
-	C.m[0][0] = 0;      C.m[0][1] = -W->z;  C.m[0][2] = W->y;
-	C.m[1][0] = W->z;   C.m[1][1] = 0;      C.m[1][2] = -W->x;
-	C.m[2][0] = -W->y;  C.m[2][1] = W->x;   C.m[2][2] = 0;
-	retrun C;
+  matrix_t C;
+  C.m[0][0] = 0;      C.m[0][1] = -W->z;  C.m[0][2] = W->y;
+  C.m[1][0] = W->z;   C.m[1][1] = 0;      C.m[1][2] = -W->x;
+  C.m[2][0] = -W->y;  C.m[2][1] = W->x;   C.m[2][2] = 0;
+  return C;
 }

@@ -18,18 +18,21 @@ extern "C" {
 
 
   //prototypes
-  matrix_t matrix_add( matrix_t * A, matrix_t * B );
+  matrix_t matrix_add( const matrix_t * A, const matrix_t * B );
 
-  matrix_t matrix_multiply_ms( matrix_t * A, double s );
-  matrix_t matrix_multiply( matrix_t * A, matrix_t * B );
-  matrix_t matrix_similarity_transform( matrix_t * A, matrix_t * B );
-  matrix_t matrix_reorthogonalize( matrix_t * A );
-  matrix_t matrix_transpose( matrix_t * A );
-  matrix_t matrix_inverse( matrix_t * T );
+  matrix_t matrix_multiply_ms( const  matrix_t * A, const double s );
+  matrix_t matrix_multiply( const matrix_t * A, const matrix_t * B );
+  matrix_t matrix_similarity_transform( const matrix_t * A, const matrix_t * B );
+  matrix_t matrix_reorthogonalize( const matrix_t * A );
+  matrix_t matrix_transpose( const matrix_t * A );
+  matrix_t matrix_inverse( const matrix_t * T );
 
-  double matrix_determinant( matrix_t * T );
-  double matrix_determinant_inverse( matrix_t * T );
+  double matrix_determinant( const matrix_t * T );
+  double matrix_determinant_inverse( const matrix_t * T );
 
+
+  matrix_t matrix_scale( const matrix_t * A, const double s );
+  matrix_t matrix_adjugate( const matrix_t * T );
 
 #ifdef __cplusplus
 };

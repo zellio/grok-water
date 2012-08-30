@@ -1,34 +1,40 @@
 
-CC = gcc -O3
-CFLAGS = -std=c99 -pedantic -Wall -Wextra -Wmissing-prototypes -Wmissing-declarations -c
+CC = gcc -O3 -x c -std=c99
+RM = rm -Rf
+
+CFLAGS = -c -Wall -Wextra -Werror -pedantic-errors -Wdouble-promotion -Wformat=2 -Winit-self -Wmissing-include-dirs -Wparentheses -Wswitch-default -Wswitch-enum -Wsync-nand -Wuninitialized -Wunknown-pragmas -Wstrict-overflow=2 -Wfloat-equal -Wundef -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wconversion -Wlogical-op -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wmissing-format-attribute -Wpacked -Wpacked-bitfield-compat -Wpadded -Wdouble-promotion -Wformat=2 -Winit-self -Wmissing-include-dirs -Wparentheses -Wswitch-default -Wswitch-enum -Wsync-nand -Wuninitialized -Wunknown-pragmas -Wstrict-overflow=2 -Wfloat-equal -Wundef -Wpointer-arith -Wbad-function-cast -Wcast-qual -Wconversion -Wlogical-op -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wmissing-format-attribute -Wpacked -Wpacked-bitfield-compat -Wpadded -Wredundant-decls -Wnested-externs -Winline -Woverlength-strings -Wcomments -Wundef -Wunused-macros -Wendif-labels
 LDFLAGS =
 
-SRCROOT = ./src/core
-INCROOT = ./src/header
-TSTROOT = ./src/test
+SRCROOT = src/core
+INCROOT = src/header
+TSTROOT = src/test
 
-OBJROOT = ./build
+OBJROOT = build
 
-
+VPATH=$(SRCROOT):$(INCROOT):$(TSTROOT):$(OBJROOT)
 
 .PHONY: all
 
 all:
 
-fast.o:
-	$(CC) $(CFLAGS) -I$(INCROOT) $(SRCROOT)/math/fast.c -o $(OBJROOT)/fast.o
+fast.o: math/fast.c math/fast.h
+	$(CC) $(CFLAGS) -I$(INCROOT) -o $(OBJROOT)/$(@) $(<)
 
-vector.o:
-	$(CC) $(CFLAGS) -I$(INCROOT) $(SRCROOT)/math/vector.c -o $(OBJROOT)/vector.o
+vector.o: math/vector.c math/vector.h
+	$(CC) $(CFLAGS) -I$(INCROOT) -o $(OBJROOT)/$(@) $(<)
 
-matrix.o:
-	$(CC) $(CFLAGS) -I$(INCROOT) $(SRCROOT)/math/matrix.c -o $(OBJROOT)/matrix.o
+matrix.o: math/matrix.c math/matrix.h
+	$(CC) $(CFLAGS) -I$(INCROOT) -o $(OBJROOT)/$(@) $(<)
 
-math: fast.o vector.o matrix.o
+inspect.o: math/inspect.c math/inspect.h
+	$(CC) $(CFLAGS) -I$(INCROOT) -o $(OBJROOT)/$(@) $(<)
 
+math: fast.o vector.o matrix.o inspect.o
 
+simulation.o: simulation.c simulation.h math
+	$(CC) $(CFLAGS) -I$(INCROOT) -o $(OBJROOT)/$(@) $(<)
 
 .PHONY: clean
 
 clean:
-	rm -Rf $(OBJROOT)/*.o
+	$(RM) $(OBJROOT)/*.o

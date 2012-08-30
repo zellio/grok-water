@@ -1,11 +1,12 @@
+
 #ifndef __GROKWATER_MATH_FAST__
 #define __GROKWATER_MATH_FAST__
 
+#include "types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-
 
   //prototypes
 

@@ -1,26 +1,18 @@
 
-
 #ifndef __GROKWATER_MATH_INSPECT__
 #define __GROKWATER_MATH_INSPECT__
 
+#include "types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-
-  // typedefs and structs
-
-  typedef matrix_t matrix;
-  typedef vector_t vector;
-
-
   //prototypes
 
-  int inspect_matrix( matrix_t matrix );
+  int inspect_matrix( const matrix_t * M );
 
-  int inspect_vector( vector_t vector );
-
+  int inspect_vector( const vector_t * V );
 
 #ifdef __cplusplus
 };

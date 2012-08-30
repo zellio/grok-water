@@ -1,21 +1,12 @@
+
 #ifndef __GROKWATER_MATH_MATRIX__
 #define __GROKWATER_MATH_MATRIX__
 
+#include "types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-  //types and structs
-
-  // forward define the vector type so that source will compile properly
-  typedef struct vector vector_t;
-
-  typedef struct matrix matrix_t;
-  struct matrix {
-    double m[3][3];
-  };
-
 
   //prototypes
   matrix_t matrix_add( const matrix_t * A, const matrix_t * B );

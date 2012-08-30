@@ -1,7 +1,6 @@
 
 
 #include "math/matrix.h"
-#include "math/vector.h"
 
 
 matrix_t matrix_add( const matrix_t * A, const matrix_t * B ) {

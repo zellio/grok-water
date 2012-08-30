@@ -2,6 +2,7 @@
 #ifndef __GROKWATER_MATH_VECTOR__
 #define __GROKWATER_MATH_VECTOR__
 
+#include "types.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -9,19 +10,6 @@ extern "C" {
 
   //macros
   #define CREATE_VECTOR(X, Y, Z) (vector_t) { (X), (Y), (Z) }
-
-
-  //types and structs
-
-  // forward define the matrix type so that source will compile properly
-  typedef struct matrix matrix_t;
-
-  typedef struct vector vector_t;
-  struct vector {
-    double x;
-    double y;
-    double z;
-  };
 
 
   //prototypes

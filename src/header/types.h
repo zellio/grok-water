@@ -8,6 +8,7 @@ extern "C" {
 
   //types and structs
 
+
   // forward define the vector type so that source will compile properly
   typedef struct matrix              matrix_t;
   typedef struct vector              vector_t;

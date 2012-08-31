@@ -9,7 +9,7 @@ extern "C" {
 #endif
 
   //macros
-  #define CREATE_VECTOR(X, Y, Z) (vector_t) { (X), (Y), (Z) }
+#define CREATE_VECTOR(X, Y, Z) (vector_t){ (X), (Y), (Z) }
 
 
   //prototypes

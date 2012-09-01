@@ -38,3 +38,7 @@ simulation.o: simulation.c simulation.h math
 
 clean:
 	$(RM) $(OBJROOT)/*.o
+
+.PHONY: rebuild
+
+rebuild: clean math simulation.o
